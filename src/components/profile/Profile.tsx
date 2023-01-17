@@ -1,6 +1,10 @@
 import {FC, ReactElement} from "react";
 import {Box,Typography,Avatar} from '@mui/material'
-const Profile : FC = () :ReactElement => {
+
+interface IProfile {
+    name : string
+}
+const Profile : FC<IProfile> = (props ) :ReactElement => {
   return (
       <Box display={'flex'} flexDirection={'column'} justifyContent={'center'} alignItems={'center'}>
         <Avatar
@@ -12,10 +16,10 @@ const Profile : FC = () :ReactElement => {
         }}
         >
           <Typography variant={'h4'} color={'text.primary'}>
-              W
+              {`${props.name.substring(0,1)}`}
           </Typography>
         </Avatar>
-          <Typography variant={'h6'} color={'text.primary'}>Welcome, Waheed</Typography>
+          <Typography variant={'h6'} color={'text.primary'}>Welcome,{props.name}</Typography>
           <Typography variant={'body1'} color={'text.primary'}>Your personal tasks manager</Typography>
       </Box>
   )

@@ -17,7 +17,7 @@ const Sidebar : FC = () : ReactElement => {
           alignItems :'center'
 
       }}>
-          <Profile/>
+          <Profile name={'Waheed'}/>
       </Grid>
   )
 }
