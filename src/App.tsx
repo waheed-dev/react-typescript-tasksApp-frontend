@@ -1,13 +1,13 @@
 import { useState, FC, ReactElement,} from 'react'
 import {ThemeProvider, CssBaseline} from '@mui/material'
 import {theme} from './theme/theme'
-
+import Dashboard from './pages/dashboard/dashboard'
 
 const App : FC = () :ReactElement => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-            <div>hello worssssld</div>
+            <Dashboard/>
         </ThemeProvider>
 
     )
