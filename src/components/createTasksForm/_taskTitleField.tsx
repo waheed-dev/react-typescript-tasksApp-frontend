@@ -1,8 +1,9 @@
 import {FC, ReactElement} from "react";
 import {TextField} from '@mui/material'
+import { ITextField} from './interfaces/ITextField'
 
-
- const TaskTitleField : FC = () :ReactElement => {
+ const TaskTitleField : FC<ITextField> = (props) :ReactElement => {
+    const {disabled = false,onChange = (e) => console.log(e.target.value)} = props
   return (
       <TextField
       id={'title'}
@@ -12,6 +13,8 @@ import {TextField} from '@mui/material'
       size={'small'}
       name={'title'}
       fullWidth
+      disabled={disabled}
+      onChange={onChange}
       />
   )
 }
