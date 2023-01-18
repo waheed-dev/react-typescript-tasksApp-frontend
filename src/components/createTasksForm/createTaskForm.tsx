@@ -1,5 +1,5 @@
 import {FC, ReactElement} from "react";
-import { Box, Typography,Stack} from '@mui/material'
+import { Box, Typography,Stack,SelectChangeEvent} from '@mui/material'
 import TaskTitleField from './_taskTitleField'
 import TaskDescriptionField from './_taskDescriptionField'
 import TaskDatePicker from './_taskDateField'
@@ -33,6 +33,7 @@ const CreateTaskForm : FC = () :ReactElement => {
                                 label : Status.inProgress.toUpperCase()
                             }
                         ]}
+                        onChange={(e: SelectChangeEvent) => console.log(e)}
                     />
                     <TaskSelectField
                         label={'Priority'}
@@ -51,6 +52,7 @@ const CreateTaskForm : FC = () :ReactElement => {
                                 label : Priority.low
                             }
                         ]}
+                        onChange={(e: SelectChangeEvent) => console.log(e)}
                     />
                 </Stack>
             </Stack>
